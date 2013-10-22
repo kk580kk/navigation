@@ -34,6 +34,7 @@
                    destdir="${classes.dir}"
                    classpathref="lib.classpath"
                    source="1.6"
+				   encoding="UTF-8"
                    debug="true"
                    target="1.6"/>
             <copy todir="${classes.dir}">

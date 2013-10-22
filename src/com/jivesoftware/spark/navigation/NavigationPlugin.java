@@ -29,7 +29,7 @@ import org.jivesoftware.spark.ui.ContactList;
 import org.jivesoftware.spark.ui.MessageFilter;
 import org.jivesoftware.spark.ui.PresenceListener;
 import org.jivesoftware.spark.ui.TranscriptWindow;
-import org.lobobrowser.primary.ext.AddBookmarkDialog;
+//import org.lobobrowser.primary.ext.AddBookmarkDialog;
 
 
 import com.jivesoftware.spark.navigation.NavigationTreePanel;
@@ -119,7 +119,7 @@ public class NavigationPlugin implements Plugin {
         // Create an action to add to the Context Menu
         final Action sayHelloAction = new AbstractAction() {
             public void actionPerformed(ActionEvent actionEvent) {
-                JOptionPane.showMessageDialog(SparkManager.getMainWindow(), "Welcome to Spark");
+                JOptionPane.showMessageDialog(SparkManager.getMainWindow(), "Welcome to BaosightIM");
             }
         };
 

@@ -2,7 +2,6 @@ package com.jivesoftware.spark.navigation;
 
 import org.jivesoftware.PasswordMD5;
 import org.jivesoftware.Spark;
-import org.jivesoftware.resource.SparkRes;
 import org.jivesoftware.spark.SparkManager;
 
 import javax.swing.*;
@@ -17,6 +16,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
+import java.net.URI;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -74,7 +74,9 @@ public class NavigationTreePanel extends JPanel {
             ex.printStackTrace();
         }
         webUrl = config.getValue("weburl");
-        webPath = SparkRes.getString("NAVI");
+//        webPath = SparkRes.getString("NAVI");
+//        use built in function
+        webPath = "?type=navi";
 
         String path = webUrl + webPath;
         //组织机构树根节点
@@ -88,7 +90,7 @@ public class NavigationTreePanel extends JPanel {
 
         cre = passwordMD5.md5((minuteStr + password));
 
-        urlStr = path + "?p_username=" + name + "&p_password=" + cre + "&p_authen=" + authenType;
+        urlStr = path + "&p_username=" + name + "&p_password=" + cre + "&p_authen=" + authenType;
 
         System.out.println("URL:" + urlStr);
         xmlNodes = getTreeChildren(urlStr);
@@ -143,6 +145,7 @@ public class NavigationTreePanel extends JPanel {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
+                //get service url
                 webUrl = config.getValue("weburl");
                 //   urlStr = "http://localhost:8080/efmpx/"+selectedNode.getUrl()+link+"p_username=" + name + "&p_password=" + cre + "&p_authen=" + authenType;
                 urlStr = webUrl + selectedNode.getUrl() + link + "p_username=" + name + "&p_password=" + cre + "&p_authen=" + authenType;
@@ -150,7 +153,9 @@ public class NavigationTreePanel extends JPanel {
                 System.out.println("selectedNode的Url:" + urlStr);
                 rt = Runtime.getRuntime();
                 try {
-                    rt.exec("C:\\Program Files\\Internet Explorer\\iexplore.exe " + urlStr);
+//                    rt.exec("C:\\Program Files\\Internet Explorer\\iexplore.exe " + urlStr);
+                	//TODO
+                	Desktop.getDesktop().browse(new URI(selectedNode.getUrl()));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }

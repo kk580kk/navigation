@@ -9,9 +9,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-import org.jivesoftware.resource.SparkRes;
 
 import com.jivesoftware.spark.navigation.ExpandNavigationTreeNode;
+import com.jivesoftware.spark.navigation.resources.NavigationResources;
 public class IconNavigationNodeRenderer extends DefaultTreeCellRenderer//继承该类 
 {   
 	 /** 
@@ -53,9 +53,9 @@ public class IconNavigationNodeRenderer extends DefaultTreeCellRenderer//继承�
        
        // this.setIcon(new ImageIcon(url+"/leaf.png")); 
       
-        this.setOpenIcon(SparkRes.getImageIcon("DOWN"));
-        this.setClosedIcon(SparkRes.getImageIcon("RIGHT"));
-        this.setLeafIcon(SparkRes.getImageIcon("FILE"));
+        this.setOpenIcon(NavigationResources.getImageIcon("DOWN"));
+        this.setClosedIcon(NavigationResources.getImageIcon("RIGHT"));
+        this.setLeafIcon(NavigationResources.getImageIcon("FILE"));
 //        this.setOpenIcon(new ImageIcon(url+"/down.png"));
 //        this.setClosedIcon(new ImageIcon(url+"/right.png"));
 //        this.setLeafIcon(new ImageIcon(url+"/file.png"));
